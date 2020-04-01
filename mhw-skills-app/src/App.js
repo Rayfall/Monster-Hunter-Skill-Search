@@ -32,12 +32,20 @@ function App() {
   if(armor[0] ? true : false){
   return (
     <div className="App">
-    <Header />
-    <DataContext.Provider value={{ skillset, armor}}>
-      <Main />
-    </DataContext.Provider>    
-    <Footer />
-  </div>
+      <nav>
+        <Header />
+      </nav>
+
+      <main>
+        <DataContext.Provider value={{ skillset, armor}}>
+          <Main />
+        </DataContext.Provider> 
+      </main>
+
+      <footer>
+        <Footer />
+      </footer>      
+    </div>
   );
 }
 // END IF
