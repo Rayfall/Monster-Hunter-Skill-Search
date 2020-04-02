@@ -5,10 +5,10 @@ import { DataContext } from "../App";
 
 export default function Search() {
     const dataContext = useContext(DataContext);
-    const [skillData, setSkillData] = useState([]); 
+    const [skillData, setSkillData] = useState(dataContext.skillset[0]); 
 
-    const handleSubmit = async skill => {
-        setSkillData(skill);
+    const handleSubmit = async s => {
+        setSkillData(s);
     }
 
     return (

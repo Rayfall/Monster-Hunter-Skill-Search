@@ -5,6 +5,7 @@ export default function Build() {
     return (
         <>
         <h2>Build Page</h2>
+        <p>Coming soon...</p>
         </>
     );    
 }
