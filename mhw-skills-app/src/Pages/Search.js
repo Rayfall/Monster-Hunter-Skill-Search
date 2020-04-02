@@ -2,6 +2,7 @@ import React, {useState, useEffect, useContext} from "react"
 import Form from "../components/Form";
 import Skill from "../components/Handle_Search"
 import { DataContext } from "../App";
+import "../styles/Search.css"
 
 export default function Search() {
     const dataContext = useContext(DataContext);
@@ -12,10 +13,10 @@ export default function Search() {
     }
 
     return (
-    <>
+    <div className="search-page">
     <h2>Search Skill</h2>
     <Form handleSubmit={handleSubmit} placeholderText={"Search a skill..."}/>
     <Skill skill={skillData}/>
-    </>
+    </div>
     );
 }

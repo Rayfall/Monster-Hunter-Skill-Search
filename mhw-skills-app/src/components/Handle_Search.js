@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { DataContext } from "../App";
 
 export default function Skill(props) {
-    
+
     const dataContext = useContext(DataContext);
 
     if(props.skill ? true : false) {
@@ -18,23 +18,40 @@ export default function Skill(props) {
             return skill
         });
 
-        const skill = skills.filter(skill => skill.name == props.skill)
+        const skill = skills.filter(skill => skill.name == props.skill)[0]
         
         let results = <><p>Type in an exact skill to find armor pieces with the skill...</p></>
-        
-        if(skill[0] ? true : false) {
-            const search = armorSets.filter(piece => (piece.rank === "master" && piece.skills[0].id === skill[0].id));
+        console.log("Handle_Search Skill: ", skill)
+        if(skill ? true : false) {
+            const search = armorSets.filter(piece => (piece.rank === "master" && piece.skills[0].id === skill.id));
             
             results = search.map((result,index) => {
                 return <li key={index}>{result.type} - {result.armorSet.name}</li>;
             });
 
+            const levels = skill.ranks.map((level, index) => {
+                return (
+                    <li key={index}>
+                        Level: {level.level}, {level.description}
+                    </li>
+                )
+            });
+
             return (
                 <>
-                    <h3>Armor pieces containing: {skill[0].name}</h3>
-                    <ul>
-                        {results}
-                    </ul>
+                    <div>
+                        <h3>Skill Information: {skill.name}</h3>
+                        <ul>
+                            <li>Description: {skill.description}</li>
+                            {levels}
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Armor pieces containing: {skill.name}</h3>
+                        <ul>
+                            {results}
+                        </ul>
+                    </div>                    
                 </>
             )
         }
