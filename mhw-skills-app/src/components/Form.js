@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Route, Link, Switch } from 'react-router-dom';
 import { DataContext } from "../App";
 
 function Form(props) {
@@ -15,7 +16,6 @@ function Form(props) {
   const handleChange = e => {
     setIntput(e.target.value);
   };
-
     return (
       <form onSubmit={handleSubmit}>
         <input
@@ -25,27 +25,10 @@ function Form(props) {
           placeholder={props.placeholderText}
         />
         <button>Search</button>
+        
       </form>
     )
   
 }
 
 export default Form;
-/*
-handleInputChange = () => {
-  this.setState({
-    query: this.search.value
-  })
-}
-  return (
-    <form>
-      <input
-        placeholder="Search for..."
-        ref={input => this.search = input}
-        onChange={this.handleInputChange}
-      />
-      <p>{this.state.query}</p>
-    </form>
-  )
-}
-}*/

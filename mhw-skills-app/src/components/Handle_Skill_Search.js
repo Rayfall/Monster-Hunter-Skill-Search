@@ -2,11 +2,10 @@ import React, { useContext } from "react"
 import { DataContext } from "../App";
 
 export default function Skill(props) {
-
     const dataContext = useContext(DataContext);
 
     if(props.skill ? true : false) {
-        
+
         const userSkill = props.skill;
 
         const armorSets = dataContext.armor.map((piece,index) => {
@@ -18,10 +17,10 @@ export default function Skill(props) {
             return skill
         });
 
-        const skill = skills.filter(skill => skill.name == props.skill)[0]
+        const skill = skills.filter(skill => skill.name==props.skill)[0]
         
         let results = <><p>Type in an exact skill to find armor pieces with the skill...</p></>
-        console.log("Handle_Search Skill: ", skill)
+
         if(skill ? true : false) {
             const search = armorSets.filter(piece => (piece.rank === "master" && piece.skills[0].id === skill.id));
             
@@ -36,10 +35,24 @@ export default function Skill(props) {
                     </li>
                 )
             });
+        
+            const skillGallery = skills.map((skill,index)=>{
+                if(skill.name.toLowerCase().includes(props.skill)){    
+                let nameCheck = skill.name.replace (' ', '_',)
+                
+                           
+                        return(
+                        <div>        
+                            <p>{skill.name}</p>
+                        </div>
+                        )  
+                                         
+                } })
 
             return (
                 <>
                     <div>
+                        {skillGallery}
                         <h3>Skill Information: {skill.name}</h3>
                         <ul>
                             <li>Description: {skill.description}</li>
@@ -75,3 +88,20 @@ export default function Skill(props) {
     }
     
 }
+
+/**
+ * const skillGallery = skills.map((skill,index)=>{
+if(skill.name.toLowerCase().includes(props.skill)){    
+let nameCheck = skill.name.replace (' ', '_',)
+
+           
+        return(
+        <div>        
+            <p>{skill.name}</p>
+        </div>
+        )  
+            
+        if(skill.name.toLowerCase().includes(props.skill)) {
+                console.log(skill);
+            }
+} }) */

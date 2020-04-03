@@ -7,15 +7,85 @@
 }
 
 body {
-    background: rgb(235, 231, 231);
+    background: rgb(51, 51, 51);
     font-family: 'Varela Round', sans-serif;
+    color: white;
 }
 
 main {
   margin: 65px 25px 10px;
 }
 
-footer {
-  background-color: #000;
-  color: white;
+span {
+  background-color: #854B19;
+  color: #854B19;
 }
+
+footer {
+  background-color: #854B19;  
+}
+
+.main-button {
+  padding: 15px 25px;
+  border-radius: 8px;
+  background-color: #333333;
+  border: 4px solid #6C9459;
+  cursor: pointer;
+}
+
+.main-button:hover {
+  background-color: #6C9459;
+}
+
+.link-text {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#the-button {
+  background-color: #6C9459;
+}
+
+#the-button:hover {
+  background-color: #333333;
+}
+
+.main-content {
+  margin-bottom: 23px;
+  padding: 10px 0px;
+}
+
+.main-content:first-of-type,
+.main-content:nth-of-type(3) {
+  background-image: url("https://res.cloudinary.com/aetherfall/image/upload/v1585875006/image_2_awmm4n.png");
+  background-position: center;
+}
+
+.main-content:nth-of-type(2) {
+  background-image: url("https://res.cloudinary.com/aetherfall/image/upload/v1585875007/image_1_ed5wkw.png");
+  background-position: center;
+}
+
+@media (min-width:1024px) {
+  .main-content:first-of-type,
+  .main-content:nth-of-type(3) {
+    background-image: url("https://res.cloudinary.com/aetherfall/image/upload/v1585875006/image_2_awmm4n.png");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .main-content:nth-of-type(2) {
+    background-image: url("https://res.cloudinary.com/aetherfall/image/upload/v1585875007/image_1_ed5wkw.png");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+/* Colors
+#333333
+#854B19
+#6C9459
+#CBB164
+#878787
+*/

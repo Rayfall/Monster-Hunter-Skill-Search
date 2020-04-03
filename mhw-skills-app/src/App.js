@@ -9,10 +9,12 @@ export const DataContext = createContext();
 function App() {
   const [skillset, setSkillset] = useState([]);
   const [armor, setArmor] = useState([]);
+  const [armorSet, setArmorSet] = useState([]);
 
   useEffect(() => {
     const armorURL = "https://mhw-db.com/armor";
     const skillsetURL = "https://mhw-db.com/skills";
+    const setURL = "https://mhw-db.com/armor/sets";
     const makeSkillAPICall = async () => {
       const res = await fetch(skillsetURL);
       const json = await res.json();
@@ -25,8 +27,15 @@ function App() {
       setArmor(json);
     };
 
+    const makeSetAPICall = async () => {
+      const res = await fetch(setURL);
+      const json = await res.json();
+      setArmorSet(json);
+    };
+
     makeArmorAPICall();
     makeSkillAPICall();
+    makeSetAPICall();
   }, []);
 
   if(armor[0] ? true : false){
@@ -37,7 +46,7 @@ function App() {
       </nav>
 
       <main>
-        <DataContext.Provider value={{ skillset, armor}}>
+        <DataContext.Provider value={{ skillset, armor, armorSet}}>
           <Main />
         </DataContext.Provider> 
       </main>
