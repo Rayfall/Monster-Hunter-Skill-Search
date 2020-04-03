@@ -35,24 +35,10 @@ export default function Skill(props) {
                     </li>
                 )
             });
-        
-            const skillGallery = skills.map((skill,index)=>{
-                if(skill.name.toLowerCase().includes(props.skill)){    
-                let nameCheck = skill.name.replace (' ', '_',)
-                
-                           
-                        return(
-                        <div>        
-                            <p>{skill.name}</p>
-                        </div>
-                        )  
-                                         
-                } })
 
             return (
                 <>
                     <div>
-                        {skillGallery}
                         <h3>Skill Information: {skill.name}</h3>
                         <ul>
                             <li>Description: {skill.description}</li>

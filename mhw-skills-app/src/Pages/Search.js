@@ -17,9 +17,7 @@ export default function Search() {
     <div className="search-page">
     <h2>Search Skill</h2>
     <Form handleSubmit={handleSubmit} placeholderText={"Search a skill..."}/>
-    <Switch>
-        <Route path="/search/:name" render={props => <Skill {...skillData} skill={skillData}/>}/>
-    </Switch>
+    <Skill skill={skillData}/>
     </div>
     );
 }
