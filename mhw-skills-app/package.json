@@ -539,7 +539,7 @@
     "pn": "^1.1.0",
     "portfinder": "^1.0.25",
     "posix-character-classes": "^0.1.1",
-    "postcss": "^7.0.27",
+    "postcss": "^8.2.10",
     "postcss-attribute-case-insensitive": "^4.0.2",
     "postcss-browser-comments": "^3.0.0",
     "postcss-calc": "^7.0.2",
