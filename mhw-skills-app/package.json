@@ -473,7 +473,7 @@
     "node-modules-regexp": "^1.0.0",
     "node-releases": "^1.1.53",
     "normalize-path": "^2.1.1",
-    "normalize-url": "^1.9.1",
+    "normalize-url": "^4.5.1",
     "npm-run-path": "^2.0.2",
     "normalize-range": "^0.1.2",
     "nth-check": "^1.0.2",
